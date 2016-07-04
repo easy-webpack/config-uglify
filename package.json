@@ -2,6 +2,7 @@
   "name": "@easy-webpack/config-uglify",
   "description": "Easy Webpack configuration function for uglify",
   "main": "dist/index.js",
+  "version": "0.0.1",
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "TS_NODE_FAST=true TS_NODE_NO_PROJECT=true ava",
