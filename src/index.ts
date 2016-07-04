@@ -8,7 +8,7 @@ import * as webpack from 'webpack'
  *
  * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
  */
-export = function uglify({debug = false} = {}) {
+export = function uglify({debug = false, exclude = []} = {}) {
   return function uglify(this: WebpackConfig): WebpackConfig {
     const options = debug ? {
       beautify: true, //debug
@@ -25,19 +25,19 @@ export = function uglify({debug = false} = {}) {
       }, // debug
       comments: true, //debug
     } : {
-      beautify: true, //prod
+      beautify: false, //prod
 
       mangle: {
         screw_ie8 : true,
         keep_fnames: true
       }, //prod
-
+	  exclude:  exclude,
       compress: {
         screw_ie8: true,
         warnings: false
       }, //prod
 
-      comments: true //prod
+      comments: false //prod
     }
 
     return {
