@@ -25,7 +25,7 @@ export = function uglify({debug = false} = {}) {
       }, // debug
       comments: true, //debug
     } : {
-      beautify: false, //prod
+      beautify: true, //prod
 
       mangle: {
         screw_ie8 : true,
@@ -37,7 +37,7 @@ export = function uglify({debug = false} = {}) {
         warnings: false
       }, //prod
 
-      comments: false //prod
+      comments: true //prod
     }
 
     return {
