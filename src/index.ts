@@ -31,7 +31,9 @@ export = function uglify({debug = false, exclude = []} = {}) {
         screw_ie8 : true,
         keep_fnames: true
       }, //prod
-	  exclude:  exclude,
+
+      exclude: exclude,
+
       compress: {
         screw_ie8: true,
         warnings: false
