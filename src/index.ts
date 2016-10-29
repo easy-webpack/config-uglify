@@ -1,4 +1,4 @@
-import {WebpackConfig, get} from '@easy-webpack/core'
+import {WebpackConfigWithMetadata, get} from '@easy-webpack/core'
 import * as webpack from 'webpack'
 
 /**
@@ -9,7 +9,7 @@ import * as webpack from 'webpack'
  * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
  */
 export = function uglify({debug = false, exclude = [], mangle = {screw_ie8 : true, keep_fnames: true}} = {}) {
-  return function uglify(this: WebpackConfig): WebpackConfig {
+  return function uglify(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     const options = debug ? {
       beautify: true, //debug
       mangle: false, //debug
