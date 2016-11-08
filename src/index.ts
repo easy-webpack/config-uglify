@@ -8,7 +8,7 @@ import * as webpack from 'webpack'
  *
  * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
  */
-export = function uglify({debug = false, exclude = [], mangle = {screw_ie8 : true, keep_fnames: true}} = {}) {
+export = function uglify({debug = false, exclude = [], mangle = {screw_ie8 : true, keep_fnames: true, except: []}} = {}) {
   return function uglify(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     const options = debug ? {
       beautify: true, //debug
